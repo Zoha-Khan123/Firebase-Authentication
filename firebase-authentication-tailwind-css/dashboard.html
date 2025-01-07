@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Dashboard</title>
+    <!-- Link to Tailwind CSS -->
+    <link rel="stylesheet" href="./src/output.css" />
+    <style>
+      /* Custom background color */
+      .custom-bg {
+        background-color: #c31162;
+      }
+      /* Zoom effect on hover */
+      .hover-zoom:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="custom-bg text-white shadow-md sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold">Dashboard</h1>
+        <div class="hidden md:flex space-x-6">
+          <a
+            href="#"
+            class="hover:text-[#C31162] hover:bg-white px-3 py-2 rounded-md"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="hover:text-[#C31162] hover:bg-white px-3 py-2 rounded-md"
+            >Profile</a
+          >
+          <a
+            href="#"
+            class="hover:text-[#C31162] hover:bg-white px-3 py-2 rounded-md"
+            >Settings</a
+          >
+          <button
+            class="signOut text-[#C31162] bg-white px-4 py-2 rounded-md hover-zoom"
+          >
+            Logout
+          </button>
+        </div>
+        <!-- Mobile Hamburger Icon -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-[#C31162] text-white py-4"
+      >
+        <a
+          href="#"
+          class="block px-6 py-2 hover:text-[#C31162] hover:bg-white rounded-md"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="block px-6 py-2 hover:text-[#C31162] hover:bg-white rounded-md"
+          >Profile</a
+        >
+        <a
+          href="#"
+          class="block px-6 py-2 hover:text-[#C31162] hover:bg-white rounded-md"
+          >Settings</a
+        >
+        <button
+          class="signOut block text-[#C31162] bg-white px-4 py-2 rounded-md mx-5 my-2 hover-zoom"
+        >
+          Logout
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="max-w-7xl mx-auto px-6 py-12 flex justify-center items-center">
+      <!-- Welcome Message -->
+      <h2 class="text-xl sm:text-3xl font-semibold text-[#C31162]">
+        Welcome to your Dashboard!
+      </h2>
+    </div>
+
+    <!-- Script to toggle mobile menu -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden"); // Toggle the 'hidden' class to show/hide the menu
+      });
+    </script>
+
+    <script type="module" src="firebaseConfig.js"></script>
+  </body>
+</html>
