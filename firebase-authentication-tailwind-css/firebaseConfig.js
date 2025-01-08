@@ -6,20 +6,19 @@ import {
   signOut,
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import {config} from './config.js';  
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCKtSYzjRrYE41o_z6CX5rfdZZ3tYVinps",
-  authDomain: "fir-auth-5e65c.firebaseapp.com",
-  projectId: "fir-auth-5e65c",
-  storageBucket: "fir-auth-5e65c.firebasestorage.app",
-  messagingSenderId: "480968032868",
-  appId: "1:480968032868:web:a2d9d1a5c8c14b08f61571",
-  measurementId: "G-PRV37B8NCZ",
+  apiKey: config.apiKey,
+  authDomain: config.authDomain,
+  projectId: config.projectId,
+  storageBucket: config.storageBucket,
+  messagingSenderId: config.messagingSenderId,
+  appId: config.appId,
+  measurementId: config.measurementId,
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
